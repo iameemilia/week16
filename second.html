@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма регистрации</title>
+  <link rel="stylesheet" href="second.css">
+</head>
+
+<body>
+  <form id="registrationForm" onsubmit="validateForm(event)">
+    <div>
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" placeholder="Введите имя" required pattern="[а-яА-ЯёЁa-zA-Z]{2,20}">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Введите email" required>
+    </div>
+    <div>
+      <label for="age">Возраст:</label>
+      <input type="number" id="age" name="age" placeholder="Введите возраст" required>
+    </div>
+    <div>
+      <label>Пол:</label>
+      <input type="radio" id="male" name="gender" value="male" required>
+      <label for="male">Мужчина</label>
+      <input type="radio" id="female" name="gender" value="female" required>
+      <label for="female">Женщина</label>
+    </div>
+    <div>
+      <label for="profession">Профессия:</label>
+      <select id="profession" name="profession" required>
+        <option value="" disabled selected hidden>Выберите профессию</option>
+        <option value="doctor">Врач</option>
+        <option value="programmer">Программист</option>
+        <option value="teacher">Учитель</option>
+        <option value="designer">Дизайнер</option>
+        <option value="engineer">Инженер</option>
+        <option value="salesperson">Продавец</option>
+        <option value="other">Другое</option>
+      </select>
+    </div>
+    <div>
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введите пароль" required minlength="8"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$">
+    </div>
+    <div>
+      <input type="checkbox" id="agreement" required>
+      <label for="agreement">Согласие на обработку данных</label>
+    </div>
+    <button type="submit" id="submitButton">Отправить</button>
+  </form>
+  <script src="second.js"></script>
+</body>
+
+</html>
